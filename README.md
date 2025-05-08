@@ -1,73 +1,86 @@
-# Welcome to your Lovable project
 
-## Project info
+# Task Management Application
 
-**URL**: https://lovable.dev/projects/8fd09625-9c96-4178-a3cb-f164dcc41587
+## Project Overview
 
-## How can I edit this code?
+This is a Task Management application that allows users to create, read, update, delete, and search tasks. The application is designed to demonstrate CRUD operations in a web interface.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Create**: Add new tasks with title, description, due date, status, and remarks
+- **Read**: View task details and list all tasks
+- **Update**: Edit existing task information
+- **Delete**: Remove tasks from the system
+- **Search**: Find tasks based on different criteria
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8fd09625-9c96-4178-a3cb-f164dcc41587) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
 - TypeScript
 - React
-- shadcn-ui
+- Vite
 - Tailwind CSS
+- shadcn-ui components
+- Zod for form validation
+- React Hook Form
+- React Router DOM for navigation
 
-## How can I deploy this project?
+## Database
 
-Simply open [Lovable](https://lovable.dev/projects/8fd09625-9c96-4178-a3cb-f164dcc41587) and click on Share -> Publish.
+The current implementation uses browser local storage for data persistence. This can be extended to use a real database system like PostgreSQL, MySQL, or MongoDB with appropriate backend integration.
 
-## Can I connect a custom domain to my Lovable project?
+## Project Structure
 
-Yes, you can!
+- `src/components`: UI components including TaskForm, TaskList
+- `src/context`: Contains TaskContext for state management
+- `src/pages`: Different views/pages of the application
+- `src/types`: TypeScript types and interfaces
+- `src/hooks`: Custom React hooks
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Getting Started
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Prerequisites
+
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+   ```sh
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory
+   ```sh
+   cd task-management-app
+   ```
+
+3. Install dependencies
+   ```sh
+   npm install
+   ```
+
+4. Start the development server
+   ```sh
+   npm run dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:8080`
+
+## Build
+
+To build the project for production:
+
+```sh
+npm run build
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
