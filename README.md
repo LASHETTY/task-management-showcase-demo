@@ -15,20 +15,23 @@ This is a Task Management application that allows users to create, read, update,
 
 ## Technologies Used
 
-This project is built with:
+This project is built with the following technologies based on the assignment requirements:
 
-- TypeScript
-- React
-- Vite
-- Tailwind CSS
-- shadcn-ui components
+### Programming Language
+- TypeScript (JavaScript superset)
+
+### Database
+- Browser LocalStorage (current implementation)
+- Can be extended to use PostgreSQL, MySQL, or other RDBMS
+
+### Frontend Technologies
+- React (Web-based frontend framework)
+- Vite (Build tool)
+- Tailwind CSS (Utility-first CSS framework)
+- shadcn-ui (Component library)
 - Zod for form validation
-- React Hook Form
+- React Hook Form for form state management
 - React Router DOM for navigation
-
-## Database
-
-The current implementation uses browser local storage for data persistence. This can be extended to use a real database system like PostgreSQL, MySQL, or MongoDB with appropriate backend integration.
 
 ## Project Structure
 
