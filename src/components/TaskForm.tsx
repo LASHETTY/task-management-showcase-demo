@@ -35,7 +35,7 @@ const taskSchema = z.object({
   description: z.string().min(3, { message: 'Description must be at least 3 characters' }),
   dueDate: z.string(),
   status: z.enum(['pending', 'in-progress', 'completed', 'cancelled']),
-  remarks: z.string().optional(),
+  remarks: z.string().optional().default(''),
 });
 
 type TaskFormValues = z.infer<typeof taskSchema>;
@@ -56,7 +56,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ task, mode }) => {
         title: '',
         description: '',
         dueDate: new Date().toISOString().split('T')[0],
-        status: 'pending',
+        status: 'pending' as TaskStatus,
         remarks: '',
       };
 
@@ -66,11 +66,20 @@ const TaskForm: React.FC<TaskFormProps> = ({ task, mode }) => {
   });
 
   function onSubmit(values: TaskFormValues) {
+    // Ensure all required fields have values
+    const taskData = {
+      title: values.title,
+      description: values.description,
+      dueDate: values.dueDate,
+      status: values.status,
+      remarks: values.remarks || '' // Ensure remarks is always a string, even if empty
+    };
+    
     if (mode === 'create') {
-      addTask(values);
+      addTask(taskData);
       navigate('/');
     } else if (mode === 'edit' && task) {
-      updateTask(task.id, values);
+      updateTask(task.id, taskData);
       navigate(`/task/${task.id}`);
     }
   }
